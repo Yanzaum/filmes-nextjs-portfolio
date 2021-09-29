@@ -43,7 +43,7 @@ export default function Home({list}) {
 }
 
 export async function getServerSideProps(context) {
-  const { res } = context
+  const { req } = context
   const res = await fetch(`${req.headers.host}/api/trending`)
   const json = await res.json()
 

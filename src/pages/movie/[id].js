@@ -40,7 +40,7 @@ export default function MovieItem({info}) {
 }
 
 export async function getServerSideProps(context) {
-  const { res } = context
+  const { req } = context
   const res = await fetch(`${req.headers.host}/api/movie/${context.params.id}`)
   const json = await res.json()
 
