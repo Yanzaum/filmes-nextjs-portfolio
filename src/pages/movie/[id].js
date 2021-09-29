@@ -34,15 +34,12 @@ export default function MovieItem({info}) {
       
       <Footer />
 
-      <style jsx global>{`
-      `}</style>
     </div>
   )
 }
 
 export async function getServerSideProps(context) {
-  const router = useRouter()
-  const res = await fetch(`${router.basePath}/api/movie/${context.params.id}`)
+  const res = await fetch(`http://${context.req.headers.host}/api/movie/${context.params.id}`)
   const json = await res.json()
 
   return {

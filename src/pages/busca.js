@@ -6,17 +6,18 @@ import { useState } from 'react'
 
 export default function Busca({}) {
 
-    const [searchText, setSearchText] = useState('')
-    const [movieList, setMovieList] = useState([])
-    const router = useRouter()
+  const [searchText, setSearchText] = useState('')
+  const [movieList, setMovieList] = useState([])
+  const router = useRouter()
 
-    const handleSarch = async () => {
-        if (searchText !== '') {
-            const result = await fetch(`${router.basePath}/api/search?q=${searchText}`)
-            const json = await result.json()
-            setMovieList(json.list)
-        }
+  const handleSarch = async () => {
+    if (searchText !== '') {
+      const result = await fetch(`${router.basePath}/api/search?q=${searchText}`)
+      const json = await result.json()
+      setMovieList(json.list)
     }
+  }
+
   return (
     <div className="flex flex-col h-screen justify-between">
       <Head>
@@ -52,10 +53,7 @@ export default function Busca({}) {
       </main>
 
       <Footer />
-
-      <style jsx global>{`
-
-      `}</style>
+      
     </div>
   )
 }

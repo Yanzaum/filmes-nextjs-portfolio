@@ -13,10 +13,10 @@ export default function Sobre({author}) {
       <Nav />
 
       <main className="container mx-auto">
-        <div class="flex h-screen justify-center items-center">
-          <div class="text-center">
-              <h1 class="text-center text-5xl text-purple-600 my-5 uppercase font-black">Sobre o sistema</h1>
-              <p class="text-xl">O sistema foi feito por <a className="underline" href="https://www.linkedin.com/in/yanzaum/" target="_blank">{author}</a> para demonstrar um pouco das habilidades com o framework Next.JS</p>
+        <div className="flex h-screen justify-center items-center">
+          <div className="text-center">
+              <h1 className="text-center text-5xl text-purple-600 my-5 uppercase font-black">Sobre o sistema</h1>
+              <p className="text-xl">O sistema foi feito por <a className="underline" href="https://www.linkedin.com/in/yanzaum/" target="_blank">{author}</a> para demonstrar um pouco das habilidades com o framework Next.JS</p>
           </div>
         </div>
       </main>

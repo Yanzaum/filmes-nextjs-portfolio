@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
+import { withRouter } from 'next/router'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 
@@ -21,7 +21,7 @@ export default function Home({list}) {
 
         <div className="grid grid-cols-2 md:grid-cols-3">
             {list.map(item=> (
-              <li className="list-none mx-2 lg:mx-8 mb-8 bg-gray-300 rounded-lg overflow-hidden lg:shadow-2xl" key={item}>
+              <li className="list-none mx-2 lg:mx-8 mb-8 bg-gray-300 rounded-lg overflow-hidden lg:shadow-2xl" key={item.id}>
                 <img src={`https://image.tmdb.org/t/p/original${item.poster_path}`} className="" alt={item.title} />
                 <div className="p-4">
                   <h5 className="">{item.title}</h5>
@@ -36,16 +36,13 @@ export default function Home({list}) {
 
       <Footer />
 
-      <style jsx global>{`
-
-      `}</style>
     </div>
   )
 }
 
-export async function getServerSideProps() {
-  const router = useRouter()
-  const res = await fetch(`${router.basePath}/api/trending`)
+export async function getServerSideProps(context) {
+
+  const res = await fetch(`http://${context.req.headers.host}/api/trending`)
   const json = await res.json()
 
   return {
