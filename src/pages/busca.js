@@ -1,16 +1,18 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import { useState } from 'react'
 
-export default function Busca({context}) {
+export default function Busca({}) {
 
     const [searchText, setSearchText] = useState('')
     const [movieList, setMovieList] = useState([])
+    const router = useRouter()
 
     const handleSarch = async () => {
         if (searchText !== '') {
-            const result = await fetch(`${context.req.headers.host}:3000/api/search?q=${searchText}`)
+            const result = await fetch(`${router.basePath}/api/search?q=${searchText}`)
             const json = await result.json()
             setMovieList(json.list)
         }
@@ -40,7 +42,7 @@ export default function Busca({context}) {
               <img src={`https://image.tmdb.org/t/p/original${item.poster_path}`} className="" alt={item.title} />
               <div className="p-4">
                 <h5 className="uppercase">{item.title}</h5>
-                <p className=""><small class="">Lançado em {item.release_date}</small></p>
+                <p className=""><small className="">Lançado em {item.release_date}</small></p>
                 <a href={`/movie/${item.id}`} className="no-underline hover:underline">Ler mais</a>
               </div>
             </li>

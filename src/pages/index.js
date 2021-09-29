@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 
@@ -42,9 +43,9 @@ export default function Home({list}) {
   )
 }
 
-export async function getServerSideProps(context) {
-  const { req } = context
-  const res = await fetch(`${req.headers.host}/api/trending`)
+export async function getServerSideProps() {
+  const router = useRouter()
+  const res = await fetch(`${router.basePath}/api/trending`)
   const json = await res.json()
 
   return {

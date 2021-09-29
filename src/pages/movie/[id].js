@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'
 
@@ -40,8 +41,8 @@ export default function MovieItem({info}) {
 }
 
 export async function getServerSideProps(context) {
-  const { req } = context
-  const res = await fetch(`${req.headers.host}/api/movie/${context.params.id}`)
+  const router = useRouter()
+  const res = await fetch(`${router.basePath}/api/movie/${context.params.id}`)
   const json = await res.json()
 
   return {
