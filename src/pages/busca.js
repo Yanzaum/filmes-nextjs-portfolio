@@ -3,14 +3,14 @@ import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import { useState } from 'react'
 
-export default function Busca({list}) {
+export default function Busca({context}) {
 
     const [searchText, setSearchText] = useState('')
     const [movieList, setMovieList] = useState([])
 
     const handleSarch = async () => {
         if (searchText !== '') {
-            const result = await fetch(`http://localhost:3000/api/search?q=${searchText}`)
+            const result = await fetch(`${context.req.headers.host}:3000/api/search?q=${searchText}`)
             const json = await result.json()
             setMovieList(json.list)
         }
