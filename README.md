@@ -1,29 +1,25 @@
-# Next.js + Tailwind CSS Example
+# Sobre o projeto
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v2.2)](https://blog.tailwindcss.com/tailwindcss-2-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+Este é um projeto para portfólio que fornece um exemplo de como usar [Next.js](https://nextjs.org) com [Tailwind CSS](https://tailwindcss.com/), consumindo dados da API [The Movie Database (TMDB)](https://www.themoviedb.org/documentation/api) para realização de consultas de filmes, contendo as seguintes páginas:
 
-It uses the new [`Just-in-Time Mode`](https://tailwindcss.com/docs/just-in-time-mode) for Tailwind CSS.
+* Página inicial contendo os filmes em destaque
+* Página para busca de filmes
+* Página com informações do filme escolhido (título, poster, média de votos e breve resumo)
 
-## Preview
+# Visualização
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+Visualize o projeto no [Vercel](https://filmes-nextjs-portfolio.vercel.app)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+# Sobre o Next.js
 
-## Deploy your own
+[Next.js](https://nextjs.org) é um framework que facilita a criação de aplicativos [React](https://pt-br.reactjs.org), que fazem renderização do lado do cliente e do servidor.
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+Com [Next.js](https://nextjs.org), as páginas do [React](https://pt-br.reactjs.org) são renderizadas automaticamente no lado do cliente e do servidor, sem o incômodo de configurar dependências como webpack ou babel e com roteamento automático e sem as restrições de projetos como Create React App.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+# Executando localmente no modo de desenvolvimento
 
-## How to use
+Para começar, basta clonar o repositório e executar `npm install && npm run dev`:
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+    git clone https://github.com/Yanzaum/filmes-nextjs-portfolio.git
+    npm install
+    npm run dev
